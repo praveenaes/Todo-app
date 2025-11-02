@@ -1,0 +1,273 @@
+/* Page Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Todo Form */
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.todo-form input,
+.todo-input {
+  padding: 12px;
+  border: 3px solid #ffb347;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #fffbf0;
+  color: #333;
+  outline: none;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.todo-form input:focus {
+  border-color: #ff6b9d;
+}
+
+.todo-form input[type="datetime-local"] {
+  background: #fff;
+  border: 3px solid #9dcdff;
+}
+
+.todo-input-btn {
+  background: #ff6b9d;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: 'Comic Sans MS', cursive;
+  box-shadow: 0 5px 0 #d4456e;
+  transition: all 0.2s;
+}
+
+.todo-input-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 0 #d4456e;
+}
+
+.todo-input-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #d4456e;
+}
+
+/* Task List */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+  width: 100%;
+  padding-right: 5px;
+}
+
+.task-item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+  border: 3px solid #ffeccf;
+  transition: all 0.3s ease;
+}
+
+.task-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 0 rgba(0, 0, 0, 0.15);
+}
+
+.task-item.completed {
+  opacity: 0.6;
+  background: #e8f5e9;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: #81c784;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 4px;
+  padding-right: 0.8rem;
+}
+
+.task-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+color: #2c3e50 !important;  /* Force dark color */
+  word-break: break-word;
+}
+
+.task-date {
+  font-size: 0.85rem;
+  color: #0a0000;
+  font-weight: 600;
+}
+
+.task-edit-input,
+.task-edit-date {
+  padding: 8px;
+  border-radius: 10px;
+  border: 3px solid #9dcdff;
+  font-size: 0.95rem;
+  background: #fff;
+  color: #333;
+  margin-bottom: 6px;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.task-edit-input {
+  width: 100%;
+}
+
+.task-edit-date {
+  width: 100%;
+}
+
+/* Buttons */
+.task-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.task-actions button {
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  font-weight: 700;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.edit-btn {
+  background: #ffa726;
+}
+
+.edit-btn:hover {
+  background: #fb8c00;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.complete-btn {
+  background: #66bb6a;
+}
+
+.complete-btn:hover {
+  background: #4caf50;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.delete-btn {
+  background: #ef5350;
+}
+
+.delete-btn:hover {
+  background: #f44336;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.task-actions button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.empty-text {
+  text-align: center;
+  color: #fff;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar */
+.task-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background: #ff6b9d;
+  border-radius: 10px;
+}
+
+.task-list::-webkit-scrollbar-thumb:hover {
+  background: #ff4d88;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .title {
+    font-size: 1.9rem;
+  }
+  
+  .todo-form {
+    padding: 1rem;
+  }
+  
+  .task-actions button {
+    width: 35px;
+    height: 35px;
+    font-size: 0.95rem;
+  }
+}
